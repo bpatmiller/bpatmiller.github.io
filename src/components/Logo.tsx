@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Box, BoxProps, Link, Text } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/react";
 import { animated, useSpring } from "@react-spring/web";
 
 const Logo = () => {
-  const [isHovered, setIsHovered] = useState(false);
   const [deg, setDeg] = useState(-180);
 
   const style = useSpring({

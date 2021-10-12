@@ -1,13 +1,4 @@
-import {
-  Flex,
-  Spacer,
-  Image,
-  Box,
-  Text,
-  Container,
-  Link,
-} from "@chakra-ui/react";
-import { ChildType } from "./util";
+import { Flex, Image, Box, Text, Link } from "@chakra-ui/react";
 import { useSpring, animated } from "react-spring";
 import React, { useState } from "react";
 
@@ -32,6 +23,7 @@ const ContentGrid = (props: ContentGridProps) => {
     <Flex
       margin="auto"
       wrap="wrap"
+      // flexDirection={["column", "column", "column", "row", "row"]}
       justify="space-around"
       maxWidth="1200px"
       p={8}
@@ -59,26 +51,26 @@ const ContentGridItem = (props: ContentGridItemProps) => {
       boxSize={["xs", "sm", "sm", "sm", "md"]}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      p={0}
       m={0}
-      paddingTop={[8, 8, 8, 0, 0]}
-      // border="1px s/olid red"
+      mb={[10, 10, 10, 2, 2]}
+      p={0} //{[0, 8, 8, 0, 0]}
     >
-      <Link href={props.link}>
+      <Link href={"/#".concat(props.link)}>
         <AnimatedImage
           src={props.img}
           objectFit="fill"
           margin="auto"
-          paddingLeft={[4, 4, 8, 8]}
-          paddingRight={[4, 4, 8, 8]}
+          paddingLeft={[4, 4, 4, 8, 8]}
+          paddingRight={[4, 4, 4, 8, 8]}
           paddingBottom={0}
+          paddingTop={0}
           marginBottom={0}
           style={imgProps}
         ></AnimatedImage>
         <Flex
           paddingTop={0}
           paddingBottom={0}
-          paddingLeft={[4, 4, 8, 8]}
+          paddingLeft={[4, 4, 4, 8, 8]}
           justify="flex-start"
           align="flex-start"
         >
