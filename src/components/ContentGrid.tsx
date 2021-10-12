@@ -1,4 +1,4 @@
-import { Flex, Image, Box, Text, Link } from "@chakra-ui/react";
+import { Flex, Image, Box, Text, LinkBox, LinkOverlay } from "@chakra-ui/react";
 import { useSpring, animated } from "react-spring";
 import React, { useState } from "react";
 
@@ -38,7 +38,7 @@ const ContentGrid = (props: ContentGridProps) => {
 const ContentGridItem = (props: ContentGridItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const imgProps = useSpring({
-    transform: isHovered ? "translate(-20px,-20px)" : "translate(0px,0px)",
+    transform: isHovered ? "translate(-10px,-10px)" : "translate(0px,0px)",
   });
 
   const textProps = useSpring({
@@ -49,38 +49,43 @@ const ContentGridItem = (props: ContentGridItemProps) => {
 
   return (
     <AnimatedBox
-      boxSize={["xs", "sm", "sm", "sm", "md"]}
+      boxSize={["sm", "sm", "sm", "sm", "md"]}
       m={0}
-      mb={[10, 10, 10, 2, 2]}
-      // pt={[4, 4, 4, 8, 8]}
+      mb={[10, 10, 10, 0, 0]}
       style={imgProps}
       backgroundColor="gray.700"
       overflow="hidden"
       borderRadius="lg"
       borderWidth="1px"
+      boxShadow="6px 6px 8px 2px #000"
+      borderColor="gray.600"
     >
-      <Link
-        href={"/#".concat(props.link)}
+      <LinkBox
+        h="100%"
+        w="100%"
+        rounded="md"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <AnimatedImage
-          fit="cover"
-          h="calc(100% - 3em)"
-          w="100%"
-          src={props.img}
-        ></AnimatedImage>
+        <LinkOverlay href={"/#".concat(props.link)}>
+          <AnimatedImage
+            fit="cover"
+            h="calc(100% - 3em)"
+            w="100%"
+            src={props.img}
+          ></AnimatedImage>
 
-        <Flex
-          w="100%"
-          p={1}
-          justify="center"
-          align="center"
-          backgroundColor="gray.700"
-        >
-          <Text fontSize="2xl">{props.title}</Text>
-        </Flex>
-      </Link>
+          <Flex
+            w="100%"
+            p={1}
+            justify="center"
+            align="center"
+            backgroundColor="gray.700"
+          >
+            <Text fontSize="2xl">{props.title}</Text>
+          </Flex>
+        </LinkOverlay>
+      </LinkBox>
     </AnimatedBox>
   );
 };

@@ -1,7 +1,6 @@
 import * as React from "react";
 
 import { ContentGrid } from "./components/ContentGrid";
-import { Layout } from "./components/Layout";
 
 const entries = [
   { title: "Fractalize.JS", link: "fractalize", img: "/frac.png" },
@@ -11,9 +10,5 @@ const entries = [
 ];
 
 export const Home = () => {
-  return (
-    <Layout>
-      <ContentGrid contents={entries} />
-    </Layout>
-  );
+  return <ContentGrid contents={entries} />;
 };
