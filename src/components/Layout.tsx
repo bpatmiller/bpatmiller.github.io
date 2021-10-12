@@ -7,6 +7,8 @@ import { Logo } from "./Logo";
 export const Layout = ({ children }: JsxElement) => {
   return (
     <Flex
+      backgroundColor="gray.800"
+      color="white"
       width="100%"
       height="100vh"
       flexDirection={["column", "column", "column", "row", "row"]}
@@ -15,7 +17,7 @@ export const Layout = ({ children }: JsxElement) => {
         flexDirection="row"
         justify="center"
         align="flex-start"
-        height="100%"
+        height={[32, 32, 32, "100%", "100%"]}
         w={["100%", "100%", "100%", "156px", "256px"]}
       >
         <Flex

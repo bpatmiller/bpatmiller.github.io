@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 const AnimatedText = animated(Text);
 const AnimatedImage = animated(Image);
+const AnimatedBox = animated(Box);
 
 interface ContentGridProps {
   contents: ContentGridItemProps[];
@@ -23,10 +24,11 @@ const ContentGrid = (props: ContentGridProps) => {
     <Flex
       margin="auto"
       wrap="wrap"
-      // flexDirection={["column", "column", "column", "row", "row"]}
       justify="space-around"
+      align="center"
       maxWidth="1200px"
-      p={8}
+      height="100%"
+      p={4}
     >
       {children}
     </Flex>
@@ -40,48 +42,46 @@ const ContentGridItem = (props: ContentGridItemProps) => {
   });
 
   const textProps = useSpring({
-    transform: isHovered ? "translate(-20px,-20px)" : "translate(0px,0px)",
     opacity: isHovered ? "100%" : "30%",
     margin: 0,
     padding: 0,
   });
 
   return (
-    <Box
+    <AnimatedBox
       boxSize={["xs", "sm", "sm", "sm", "md"]}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       m={0}
       mb={[10, 10, 10, 2, 2]}
-      p={0} //{[0, 8, 8, 0, 0]}
+      // pt={[4, 4, 4, 8, 8]}
+      style={imgProps}
+      backgroundColor="gray.700"
+      overflow="hidden"
+      borderRadius="lg"
+      borderWidth="1px"
     >
-      <Link href={"/#".concat(props.link)}>
+      <Link
+        href={"/#".concat(props.link)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <AnimatedImage
+          fit="cover"
+          h="calc(100% - 3em)"
+          w="100%"
           src={props.img}
-          objectFit="fill"
-          margin="auto"
-          paddingLeft={[4, 4, 4, 8, 8]}
-          paddingRight={[4, 4, 4, 8, 8]}
-          paddingBottom={0}
-          paddingTop={0}
-          marginBottom={0}
-          style={imgProps}
         ></AnimatedImage>
+
         <Flex
-          paddingTop={0}
-          paddingBottom={0}
-          paddingLeft={[4, 4, 4, 8, 8]}
-          justify="flex-start"
-          align="flex-start"
+          w="100%"
+          p={1}
+          justify="center"
+          align="center"
+          backgroundColor="gray.700"
         >
-          <Box>
-            <AnimatedText fontSize="4xl" style={textProps}>
-              {props.title}
-            </AnimatedText>
-          </Box>
+          <Text fontSize="2xl">{props.title}</Text>
         </Flex>
       </Link>
-    </Box>
+    </AnimatedBox>
   );
 };
 
