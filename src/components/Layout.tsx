@@ -1,14 +1,19 @@
-import { Box, Flex, Link } from "@chakra-ui/layout";
+import { Box, Container, Flex, Link } from "@chakra-ui/layout";
 import React from "react";
-import { GrGithub } from "react-icons/gr";
-import { JsxElement } from "typescript";
+import { IoLogoGithub } from "react-icons/io";
+import ColorModeButton from "./ColorModeButton";
 import { Logo } from "./Logo";
+import { ColorModeProps } from "./util";
+import { useColorMode } from "@chakra-ui/react";
 
-export const Layout = ({ children }: JsxElement) => {
+interface LayoutProps {
+  children: JSX.Element;
+  colormode: ColorModeProps;
+}
+
+export const Layout: React.FC<LayoutProps> = (props) => {
   return (
     <Flex
-      backgroundColor="gray.800"
-      color="white"
       width="100%"
       height="100vh"
       flexDirection={["column", "column", "column", "row", "row"]}
@@ -30,23 +35,26 @@ export const Layout = ({ children }: JsxElement) => {
           </Box>
           <Box p={4}>
             <Link href="https://github.com/bpatmiller">
-              <GrGithub size="2em" />
+              <IoLogoGithub size="2em" />
             </Link>
+          </Box>
+          <Box p={4}>
+            <ColorModeButton />
           </Box>
         </Flex>
       </Flex>
 
       {/* <Flex align="center" justify="center">
       <Box
-        height={["0px", "0px", "0px", "33%", "33%"]}
-        width={["33%", "33%", "33%", "0px", "0%"]}
-        borderLeft="2px solid rgba(255,255,255,0.3)"
-        borderTop="2px solid rgba(255,255,255,0.3)"
+      height={["0px", "0px", "0px", "33%", "33%"]}
+      width={["33%", "33%", "33%", "0px", "0%"]}
+      borderLeft="2px solid rgba(255,255,255,0.3)"
+      borderTop="2px solid rgba(255,255,255,0.3)"
       ></Box>
     </Flex> */}
 
       <Flex p={0} height="100%" grow={9} overflow="hide">
-        {children}
+        {props.children}
       </Flex>
     </Flex>
   );

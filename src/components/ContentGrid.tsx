@@ -2,8 +2,6 @@ import { Flex, Image, Box, Text, LinkBox, LinkOverlay } from "@chakra-ui/react";
 import { useSpring, animated } from "react-spring";
 import React, { useState } from "react";
 
-const AnimatedText = animated(Text);
-const AnimatedImage = animated(Image);
 const AnimatedBox = animated(Box);
 
 interface ContentGridProps {
@@ -41,26 +39,18 @@ const ContentGridItem = (props: ContentGridItemProps) => {
     transform: isHovered ? "translate(-10px,-10px)" : "translate(0px,0px)",
   });
 
-  const textProps = useSpring({
-    opacity: isHovered ? "100%" : "30%",
-    margin: 0,
-    padding: 0,
-  });
-
   return (
     <AnimatedBox
+      className="shadowed"
       boxSize={["sm", "sm", "sm", "sm", "md"]}
       m={0}
       mb={[10, 10, 10, 0, 0]}
       style={imgProps}
-      backgroundColor="gray.700"
       overflow="hidden"
       borderRadius="lg"
-      borderWidth="1px"
-      boxShadow="6px 6px 8px 2px #000"
-      borderColor="gray.600"
     >
       <LinkBox
+        className="caption-container"
         h="100%"
         w="100%"
         rounded="md"
@@ -68,21 +58,17 @@ const ContentGridItem = (props: ContentGridItemProps) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <LinkOverlay href={"/#".concat(props.link)}>
-          <AnimatedImage
+          <Image
             fit="cover"
             h="calc(100% - 3em)"
             w="100%"
             src={props.img}
-          ></AnimatedImage>
+          ></Image>
 
-          <Flex
-            w="100%"
-            p={1}
-            justify="center"
-            align="center"
-            backgroundColor="gray.700"
-          >
-            <Text fontSize="2xl">{props.title}</Text>
+          <Flex w="100%" p={1} justify="center" align="center">
+            <Text className="caption" fontSize="2xl">
+              {props.title}
+            </Text>
           </Flex>
         </LinkOverlay>
       </LinkBox>

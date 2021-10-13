@@ -4,4 +4,9 @@ interface ChildType {
   children: ReactChild | ReactChildren;
 }
 
-export type { ChildType };
+interface ColorModeProps {
+  colormode: string;
+  toggleColormode: any;
+}
+
+export type { ChildType, ColorModeProps };

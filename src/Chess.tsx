@@ -1,5 +1,5 @@
 import React from "react";
-import { Writeup, WriteupProps } from "./Writeup";
+import { Writeup, WriteupProps } from "./components/Writeup";
 
 const chess_props: WriteupProps = {
   title: "Chess",

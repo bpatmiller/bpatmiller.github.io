@@ -1,4 +1,7 @@
-export default {
+import { extendTheme } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
+
+const theme = extendTheme({
   colors: {
     pink: {
       "50": "#F7EEEF",
@@ -85,4 +88,34 @@ export default {
       "900": "#2D1506",
     },
   },
-};
+  styles: {
+    global: (props) => ({
+      // ".background-wrapper": {
+      //   color: mode("red.900", "red.50")(props),
+      //   backgroundColor: mode("red.50", "gray.900")(props),
+      //   stroke: mode("blue.900", "blue.50")(props),
+      // },
+      body: {
+        color: mode("gray.900", "gray.50")(props),
+        bg: mode("gray.50", "gray.900")(props),
+        // bg: background-color: #000000;
+      },
+      ".shadowed": {
+        boxShadow: mode(
+          "6px 6px 8px 2px #A0AEC0",
+          "6px 6px 8px 2px black"
+        )(props),
+        // borderColor: mode("gray.100", "black")(props),
+        // borderWidth: "2px",
+      },
+      ".caption": {
+        color: mode("gray.900", "gray.50")(props),
+      },
+      ".caption-container": {
+        bg: mode("gray.50", "gray.700")(props),
+      },
+    }),
+  },
+});
+
+export default theme;
