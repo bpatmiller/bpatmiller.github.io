@@ -1,5 +1,5 @@
 import React from "react";
-import { Writeup, WriteupProps } from "./components/Writeup";
+import { Writeup, WriteupProps } from "../components/Writeup";
 
 const gfm_props: WriteupProps = {
   title: "Multiple Interacting Fluids",

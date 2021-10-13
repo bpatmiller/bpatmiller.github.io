@@ -1,5 +1,5 @@
 import React from "react";
-import { Writeup, WriteupProps } from "./components/Writeup";
+import { Writeup, WriteupProps } from "../components/Writeup";
 
 const gan_props: WriteupProps = {
   title: "Audio Reactive GAN",

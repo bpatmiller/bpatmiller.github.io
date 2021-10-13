@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { ContentGrid } from "./components/ContentGrid";
+import { ContentGrid } from "../components/ContentGrid";
 
 const entries = [
   { title: "Fractalize.JS", link: "fractalize", img: "/frac.png" },

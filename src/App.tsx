@@ -1,20 +1,15 @@
 import * as React from "react";
-import {
-  ChakraProvider,
-  ColorModeProvider,
-  extendTheme,
-} from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { Switch, Route } from "react-router-dom";
 import useRouter from "./useRouter";
 import { useTransition, animated } from "react-spring";
 
-import myTheme from "./theme";
 import { Layout } from "./components/Layout";
-import { Home } from "./Home";
-import { Fractalize } from "./Fractalize";
-import { Argan } from "./Argan";
-import { Chess } from "./Chess";
-import { Gfm } from "./Gfm";
+import { Home } from "./pages/Home";
+import { Fractalize } from "./pages/Fractalize";
+import { Argan } from "./pages/Argan";
+import { Chess } from "./pages/Chess";
+import { Gfm } from "./pages/Gfm";
 import theme from "./theme";
 import Background from "./components/Background";
 

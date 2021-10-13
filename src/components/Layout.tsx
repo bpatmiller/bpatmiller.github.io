@@ -8,7 +8,6 @@ import { useColorMode } from "@chakra-ui/react";
 
 interface LayoutProps {
   children: JSX.Element;
-  colormode: ColorModeProps;
 }
 
 export const Layout: React.FC<LayoutProps> = (props) => {
