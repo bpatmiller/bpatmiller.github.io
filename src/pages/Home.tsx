@@ -4,9 +4,11 @@ import { ContentGrid } from "../components/ContentGrid";
 
 const entries = [
   { title: "Fractalize.JS", link: "fractalize", img: "/frac.png" },
-  { title: "Audio Reactive GAN", link: "argan", img: "/gan.jpg" },
+  { title: "Audio Reactive GAN", link: "argan", img: "/gan.png" },
   { title: "Chessboard", link: "chess", img: "/chess.png" },
   { title: "Multiple Interacting Fluids", link: "gfm2d", img: "/gfm2d.png" },
+  { title: "Raytracer", link: "raytracer", img: "/raytracer.png" },
+  { title: "BulbGL", link: "bulb", img: "/bulb.png" },
 ];
 
 export const Home = () => {

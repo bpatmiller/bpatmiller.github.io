@@ -19,16 +19,18 @@ const ContentGrid = (props: ContentGridProps) => {
     <ContentGridItem title={x.title} link={x.link} img={x.img} />
   ));
   return (
-    <Flex
-      margin="auto"
-      wrap="wrap"
-      justify="space-around"
-      align="center"
-      maxWidth="1200px"
-      height="100%"
-      p={4}
-    >
-      {children}
+    <Flex w="100%" h="100%">
+      <Flex
+        margin="auto"
+        wrap="wrap"
+        justify="space-around"
+        align="center"
+        maxWidth="1400px"
+        p={4}
+        gridRowGap={8}
+      >
+        {children}
+      </Flex>
     </Flex>
   );
 };
@@ -39,15 +41,23 @@ const ContentGridItem = (props: ContentGridItemProps) => {
     transform: isHovered ? "translate(-10px,-10px)" : "translate(0px,0px)",
   });
 
+  const desktopBoxWidth = "calc(100% * (1/3) - 32px - 1px)";
+  const tabletBoxWidth = "calc(100% * (1/2) - 32px - 1px)";
+  const mobileBoxWidth = "calc(100% * (1) - 32px - 1px)";
+
   return (
     <AnimatedBox
       className="shadowed"
-      boxSize={["sm", "sm", "sm", "sm", "md"]}
-      m={0}
-      mb={[10, 10, 10, 0, 0]}
       style={imgProps}
       overflow="hidden"
       borderRadius="lg"
+      w={[
+        mobileBoxWidth,
+        mobileBoxWidth,
+        tabletBoxWidth,
+        desktopBoxWidth,
+        desktopBoxWidth,
+      ]}
     >
       <LinkBox
         className="caption-container"
@@ -59,14 +69,14 @@ const ContentGridItem = (props: ContentGridItemProps) => {
       >
         <LinkOverlay href={"/#".concat(props.link)}>
           <Image
+            style={{ filter: isHovered ? "none" : "saturate(50%)" }}
             fit="cover"
-            h="calc(100% - 3em)"
             w="100%"
             src={props.img}
           ></Image>
 
           <Flex w="100%" p={1} justify="center" align="center">
-            <Text className="caption" fontSize="2xl">
+            <Text noOfLines={1} className="caption" fontSize="2xl">
               {props.title}
             </Text>
           </Flex>

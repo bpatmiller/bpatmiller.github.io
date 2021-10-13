@@ -10,6 +10,9 @@ import { Fractalize } from "./pages/Fractalize";
 import { Argan } from "./pages/Argan";
 import { Chess } from "./pages/Chess";
 import { Gfm } from "./pages/Gfm";
+import { Raytracer } from "./pages/Raytracer";
+import { Bulb } from "./pages/Bulb";
+
 import theme from "./theme";
 import Background from "./components/Background";
 
@@ -47,6 +50,8 @@ export const App = () => {
                   <Route exact path="/argan" component={Argan}></Route>
                   <Route exact path="/chess" component={Chess}></Route>
                   <Route exact path="/gfm2d" component={Gfm}></Route>
+                  <Route exact path="/bulb" component={Bulb}></Route>
+                  <Route exact path="/raytracer" component={Raytracer}></Route>
                 </Switch>
               </animated.div>
             );
