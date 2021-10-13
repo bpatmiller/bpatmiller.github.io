@@ -27,7 +27,7 @@ const ContentGrid = (props: ContentGridProps) => {
         align="center"
         maxWidth="1400px"
         p={4}
-        gridRowGap={8}
+        gridRowGap={[12, 12, 12, 8]}
       >
         {children}
       </Flex>

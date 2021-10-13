@@ -109,6 +109,9 @@ const theme = extendTheme({
       ".subhead": {
         color: mode("gray.700", "gray.200")(props),
       },
+      ".no-select": {
+        userSelect: "none",
+      },
     }),
   },
 });

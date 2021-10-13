@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Link, Box, Container, useColorMode } from "@chakra-ui/react";
+import {
+  Link,
+  Box,
+  Container,
+  LinkOverlay,
+  LinkBox,
+  useColorMode,
+} from "@chakra-ui/react";
 import { animated, useSpring, useTransition } from "@react-spring/web";
 import useRouter from "../useRouter";
 
@@ -22,11 +29,16 @@ const Logo = () => {
 
   return transitions((style, item) => {
     return (
-      <animated.div key={item.key} style={style}>
-        <Link href="/">
+      <animated.div className="no-select" key={item.key} style={style}>
+        <LinkBox
+          height={[24, 24, 24, 36]}
+          overflow="hidden"
+          borderRadius="50%"
+          border="1px solid"
+        >
+          <LinkOverlay href="/"></LinkOverlay>
           <svg
-            height="96px"
-            margin="auto"
+            height="100%"
             viewBox="0 0 500 500"
             xmlns="http://www.w3.org/2000/svg"
             fill={colorMode === "light" ? "black" : "white"}
@@ -64,7 +76,7 @@ const Logo = () => {
               mask="url(#Mask)"
             ></rect> */}
           </svg>
-        </Link>
+        </LinkBox>
       </animated.div>
     );
   });
