@@ -3,7 +3,9 @@ import { Writeup, WriteupProps } from "./components/Writeup";
 
 const gfm_props: WriteupProps = {
   title: "Multiple Interacting Fluids",
-  paragraphs: ["hello", "hi", "test"],
+  markdown: "",
+  short:
+    "Simulation of multiple interacting fluids (with varying density, chemical reactions, and fluid boundary projection) in 2-dimensions. Part of a semester long undergraduate reading and research course on fluid simulation .",
   date: "2019",
   tags: ["Fluid Simulation", "Python"],
 };

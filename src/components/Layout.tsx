@@ -44,16 +44,13 @@ export const Layout: React.FC<LayoutProps> = (props) => {
         </Flex>
       </Flex>
 
-      {/* <Flex align="center" justify="center">
-      <Box
-      height={["0px", "0px", "0px", "33%", "33%"]}
-      width={["33%", "33%", "33%", "0px", "0%"]}
-      borderLeft="2px solid rgba(255,255,255,0.3)"
-      borderTop="2px solid rgba(255,255,255,0.3)"
-      ></Box>
-    </Flex> */}
-
-      <Flex p={0} height="100%" grow={9} overflow="hide">
+      <Flex
+        p={0}
+        height="100%"
+        grow={9}
+        overflow="hide"
+        justify={["center", "center", "center", "flex-start", "flex-start"]}
+      >
         {props.children}
       </Flex>
     </Flex>

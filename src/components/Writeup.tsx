@@ -1,6 +1,28 @@
-import { Flex, Heading, Box, Text, Badge } from "@chakra-ui/layout";
+import { Flex, Heading, Box, Text, Badge, Image } from "@chakra-ui/react";
 import React from "react";
 import Markdown from "markdown-to-jsx";
+
+interface MediaDisplayProps {
+  type: string;
+  src: string;
+}
+const MediaDisplay: React.FC<MediaDisplayProps> = (
+  props: MediaDisplayProps
+) => {
+  if (props.type === "image") {
+    return <Image src={props.src} />;
+  } else {
+    return (
+      <iframe
+        src={props.src}
+        frameBorder="0"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+        title="video"
+      />
+    );
+  }
+};
 
 interface WriteupProps {
   title: string;
@@ -32,7 +54,7 @@ const Writeup = (props: WriteupProps) => {
         </Box>
       </Flex>
 
-      <Box className="subhead" mb={8} fontStyle="italic">
+      <Box className="subhead" mb={4} fontStyle="italic">
         {props.date} - {props.short}
       </Box>
 
@@ -46,6 +68,7 @@ const Writeup = (props: WriteupProps) => {
               component: Heading,
               props: {
                 fontSize: "1.5em",
+                mt: 4,
               },
             },
             h3: {
@@ -56,8 +79,17 @@ const Writeup = (props: WriteupProps) => {
             },
             p: {
               component: Text,
+            },
+            Image: {
+              component: Image,
+            },
+            Flex: {
+              component: Flex,
               props: {
-                // color: "red",
+                margin: "auto",
+                justify: "center",
+                align: "center",
+                padding: 4,
               },
             },
           },

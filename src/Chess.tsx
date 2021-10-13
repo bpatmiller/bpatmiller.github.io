@@ -3,7 +3,8 @@ import { Writeup, WriteupProps } from "./components/Writeup";
 
 const chess_props: WriteupProps = {
   title: "Chess",
-  paragraphs: ["hello", "hi", "test"],
+  markdown: "",
+  short: "A simple chessboard with hand-drawn pieces and eclectic art style",
   date: "2021",
   tags: ["Frontend", "Web", "JS"],
 };
