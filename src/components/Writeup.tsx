@@ -1,13 +1,4 @@
-import {
-  Flex,
-  Heading,
-  Box,
-  Text,
-  Badge,
-  Image,
-  Link,
-  Button,
-} from "@chakra-ui/react";
+import { Flex, Heading, Box, Text, Badge, Image, Link } from "@chakra-ui/react";
 import React from "react";
 import Markdown from "markdown-to-jsx";
 import { ContentLink, CodeLink } from "./ContentLink";
@@ -24,8 +15,8 @@ interface WriteupProps {
 
 const HBar = () => {
   return (
-    <Box margin="auto" width="66%" textAlign="center">
-      . . .
+    <Box margin="auto" textAlign="center">
+      · · ·
     </Box>
   );
 };
