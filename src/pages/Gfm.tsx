@@ -8,6 +8,7 @@ const gfm_props: WriteupProps = {
     "Simulation of multiple interacting fluids (with varying density, chemical reactions, and fluid boundary projection) in 2-dimensions. Part of a semester long undergraduate reading and research course on fluid simulation .",
   date: "2019",
   tags: ["Fluid Simulation", "Python"],
+  codeLink: "https://github.com/bpatmiller/gfm2d",
 };
 
 export const Gfm = () => {

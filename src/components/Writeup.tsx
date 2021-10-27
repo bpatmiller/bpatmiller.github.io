@@ -49,17 +49,20 @@ const Writeup = (props: WriteupProps) => {
 
       {/* links */}
       <Flex justify="center" gridGap={4}>
-        <ContentLink
-          colorScheme="orange"
-          variant="outline"
-          link={props.contentLink}
-        />
-
-        <CodeLink
-          colorScheme="purple"
-          variant="outline"
-          link={props.codeLink}
-        />
+        {props.contentLink && (
+          <ContentLink
+            colorScheme="orange"
+            variant="outline"
+            link={props.contentLink}
+          />
+        )}
+        {props.codeLink && (
+          <CodeLink
+            colorScheme="purple"
+            variant="outline"
+            link={props.codeLink}
+          />
+        )}
       </Flex>
 
       {/* markdown body */}

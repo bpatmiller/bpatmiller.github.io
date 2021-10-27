@@ -10,6 +10,8 @@ const bulb_props: WriteupProps = {
   short: "Interactive Mandelbulb viewer, accelerated with WebGL",
   date: "2018",
   tags: ["JS", "Fractals"],
+  codeLink: "https://github.com/bpatmiller/bulbGL",
+  contentLink: "https://bpatmiller.github.io/bulbGL",
 };
 
 export const Bulb = () => {
