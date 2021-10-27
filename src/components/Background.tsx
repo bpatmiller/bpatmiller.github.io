@@ -5,7 +5,7 @@ import ltbg from "../ltbg.svg";
 import dkbg from "../dkbg.svg";
 
 const Background = ({ children }: any) => {
-  const { colorMode, _ } = useColorMode();
+  const { colorMode } = useColorMode();
 
   const style = {
     backgroundImage: colorMode === "light" ? `url(${ltbg})` : `url(${dkbg})`,

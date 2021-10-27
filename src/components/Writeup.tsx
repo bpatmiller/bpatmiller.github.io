@@ -1,28 +1,16 @@
-import { Flex, Heading, Box, Text, Badge, Image } from "@chakra-ui/react";
+import {
+  Flex,
+  Heading,
+  Box,
+  Text,
+  Badge,
+  Image,
+  Link,
+  Button,
+} from "@chakra-ui/react";
 import React from "react";
 import Markdown from "markdown-to-jsx";
-
-interface MediaDisplayProps {
-  type: string;
-  src: string;
-}
-const MediaDisplay: React.FC<MediaDisplayProps> = (
-  props: MediaDisplayProps
-) => {
-  if (props.type === "image") {
-    return <Image src={props.src} />;
-  } else {
-    return (
-      <iframe
-        src={props.src}
-        frameBorder="0"
-        allow="autoplay; encrypted-media"
-        allowFullScreen
-        title="video"
-      />
-    );
-  }
-};
+import { ContentLink, CodeLink } from "./ContentLink";
 
 interface WriteupProps {
   title: string;
@@ -30,7 +18,17 @@ interface WriteupProps {
   short: string;
   date: string;
   tags: string[];
+  contentLink: string;
+  codeLink: string;
 }
+
+const HBar = () => {
+  return (
+    <Box margin="auto" width="66%" textAlign="center">
+      . . .
+    </Box>
+  );
+};
 
 const genColor = (tagName: string) => {
   const colors = ["cyan", "pink", "green", "orange", "red", "purple"];
@@ -58,9 +56,27 @@ const Writeup = (props: WriteupProps) => {
         {props.date} - {props.short}
       </Box>
 
+      {/* links */}
+      <Flex justify="center" gridGap={4}>
+        <ContentLink
+          colorScheme="orange"
+          variant="outline"
+          link={props.contentLink}
+        />
+
+        <CodeLink
+          colorScheme="purple"
+          variant="outline"
+          link={props.codeLink}
+        />
+      </Flex>
+
+      {/* markdown body */}
+
       <Markdown
         options={{
           overrides: {
+            hr: { component: HBar },
             h1: {
               component: Heading,
             },
@@ -69,6 +85,7 @@ const Writeup = (props: WriteupProps) => {
               props: {
                 fontSize: "1.5em",
                 mt: 4,
+                mb: 2,
               },
             },
             h3: {
@@ -79,6 +96,14 @@ const Writeup = (props: WriteupProps) => {
             },
             p: {
               component: Text,
+            },
+            a: {
+              component: Link,
+              props: {
+                borderRadius: "4",
+                border: "1px solid",
+                padding: "1",
+              },
             },
             Image: {
               component: Image,

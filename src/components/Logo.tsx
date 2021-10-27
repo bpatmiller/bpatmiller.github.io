@@ -1,13 +1,6 @@
-import React, { useState } from "react";
-import {
-  Link,
-  Box,
-  Container,
-  LinkOverlay,
-  LinkBox,
-  useColorMode,
-} from "@chakra-ui/react";
-import { animated, useSpring, useTransition } from "@react-spring/web";
+import React from "react";
+import { LinkOverlay, LinkBox, useColorMode } from "@chakra-ui/react";
+import { animated, useTransition } from "@react-spring/web";
 import useRouter from "../useRouter";
 
 const Logo = () => {
@@ -25,7 +18,7 @@ const Logo = () => {
     },
     config: { tension: 120 },
   });
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
 
   return transitions((style, item) => {
     return (

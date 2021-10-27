@@ -112,6 +112,10 @@ const theme = extendTheme({
       ".no-select": {
         userSelect: "none",
       },
+      Button: {
+        userSelect: "none",
+        boxShadow: "none !important",
+      },
     }),
   },
 });

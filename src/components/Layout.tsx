@@ -1,17 +1,8 @@
-import {
-  Box,
-  Container,
-  Flex,
-  Link,
-  LinkBox,
-  LinkOverlay,
-} from "@chakra-ui/react";
+import { Box, Flex, LinkBox, LinkOverlay } from "@chakra-ui/react";
 import React from "react";
 import { IoLogoGithub } from "react-icons/io";
 import ColorModeButton from "./ColorModeButton";
 import { Logo } from "./Logo";
-import { ColorModeProps } from "./util";
-import { useColorMode } from "@chakra-ui/react";
 
 interface LayoutProps {
   children: JSX.Element;

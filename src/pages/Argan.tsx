@@ -8,6 +8,8 @@ const gan_props: WriteupProps = {
     "A series of audio/visual pieces generated using NVIDIA's stylegan2 and a custom built music analysis tool",
   date: "2021",
   tags: ["ML", "Audio", "Python"],
+  contentLink: "",
+  codeLink: "",
 };
 
 export const Argan = () => {

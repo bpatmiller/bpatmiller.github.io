@@ -39,11 +39,12 @@ const ContentGridItem = (props: ContentGridItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const imgProps = useSpring({
     transform: isHovered ? "translate(-10px,-10px)" : "translate(0px,0px)",
+    filter: isHovered ? "saturate(150%)" : "saturate(50%)",
   });
 
-  const desktopBoxWidth = "calc(100% * (1/3) - 32px - 1px)";
-  const tabletBoxWidth = "calc(100% * (1/2) - 32px - 1px)";
-  const mobileBoxWidth = "calc(100% * (1) - 32px - 1px)";
+  const desktopBoxWidth = "calc(100% * (1/3) - 64px - 1px)";
+  const tabletBoxWidth = "calc(100% * (1/2) - 64px - 1px)";
+  const mobileBoxWidth = "calc(100% * (1) - 64px - 1px)";
 
   return (
     <AnimatedBox
@@ -68,12 +69,7 @@ const ContentGridItem = (props: ContentGridItemProps) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <LinkOverlay href={"/#".concat(props.link)}>
-          <Image
-            style={{ filter: isHovered ? "none" : "saturate(50%)" }}
-            fit="cover"
-            w="100%"
-            src={props.img}
-          ></Image>
+          <Image fit="cover" w="100%" src={props.img}></Image>
 
           <Flex w="100%" p={1} justify="center" align="center">
             <Text noOfLines={1} className="caption" fontSize="2xl">
