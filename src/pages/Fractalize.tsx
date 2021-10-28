@@ -4,8 +4,8 @@ import { Writeup, WriteupProps } from "../components/Writeup";
 const markdown = `
 
 ## Animation
-<Flex>
-<iframe width='720' height='540' src='https://www.youtube.com/embed/jaG-7IOh0d0'/>
+<Flex overflow='hidden' flexDirection='column'>
+<iframe style='flex-grow:1' src='https://www.youtube.com/embed/jaG-7IOh0d0'/>
 </Flex>
 
 ## Motivation

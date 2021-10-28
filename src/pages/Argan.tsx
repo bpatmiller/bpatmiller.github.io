@@ -24,25 +24,24 @@ In addition to this, manual/hack-y modifications are performed to tailor the res
 
 This video was generated using audio from 'I Think...' by Bladee and the anime portraits model from [this page](https://github.com/justinpinkney/awesome-pretrained-stylegan2#Anime-portraits)
 
-
-<Flex>
-<iframe width='720' height='540' src='https://www.youtube.com/embed/hST8RRi3QC0'/>
+<Flex overflow='hidden' flexDirection='column'>
+<iframe style='flex-grow:1' src='https://www.youtube.com/embed/hST8RRi3QC0'/>
 </Flex>
 
 ## 02 - Rev8716 over mountains
 
 This video was generated using audio from 'Rev8617' by Skee Mask and a custom model trained on a dataset of ~1200 images of mountains and volcanos.
 
-<Flex>
-<iframe width='720' height='540' src='https://www.youtube.com/embed/fQQU_nPG7XU'/>
+<Flex overflow='hidden' flexDirection='column'>
+<iframe style='flex-grow:1' src='https://www.youtube.com/embed/fQQU_nPG7XU'/>
 </Flex>
 
 ## 03 - Outro over drawings
 
 This video was generated using original audio and the figure drawings model from [this page](https://github.com/justinpinkney/awesome-pretrained-stylegan2#figure-drawings)
 
-<Flex>
-<iframe width='720' height='540' src='https://www.youtube.com/embed/2g2oluaKL5A'/>
+<Flex overflow='hidden' flexDirection='column'>
+<iframe style='flex-grow:1' src='https://www.youtube.com/embed/2g2oluaKL5A'/>
 </Flex>
 
 `;
