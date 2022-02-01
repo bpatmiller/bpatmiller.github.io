@@ -29,7 +29,14 @@ const genColor = (tagName: string) => {
 
 const Writeup = (props: WriteupProps) => {
   return (
-    <Flex margin="auto" maxWidth={800} p={8} direction="column" align="basline">
+    <Flex
+      margin={0}
+      mb={16}
+      maxWidth={800}
+      p={0}
+      direction="column"
+      align="basline"
+    >
       <Flex justify="space-between" align="baseline" gridColumnGap={8}>
         <Box>
           <Heading>{props.title}</Heading>
@@ -99,6 +106,13 @@ const Writeup = (props: WriteupProps) => {
                 padding: "1",
               },
             },
+            li: {
+              component: Text,
+              props: {
+                ml: 4,
+                as: "li",
+              },
+            },
             Image: {
               component: Image,
             },
@@ -108,7 +122,7 @@ const Writeup = (props: WriteupProps) => {
                 margin: "auto",
                 justify: "center",
                 align: "center",
-                padding: 4,
+                padding: 2,
               },
             },
           },

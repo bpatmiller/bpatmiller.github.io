@@ -32,7 +32,7 @@ export const Layout: React.FC<LayoutProps> = (props) => {
         </Flex>
       </Flex>
 
-      <Flex p={4} w="100%" maxW={1400} alignItems={"stretch"}>
+      <Flex p={2} w="100%" maxW={1400} alignItems={"stretch"}>
         {props.children}
       </Flex>
     </Flex>
