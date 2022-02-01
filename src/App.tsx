@@ -16,6 +16,7 @@ import { Bulb } from "./pages/Bulb";
 import theme from "./theme";
 import Background from "./components/Background";
 import { Cvtrack } from "./pages/Cvtrack";
+import { Theremin } from "./pages/Theremin";
 
 export const App = () => {
   const { location } = useRouter();
@@ -54,6 +55,7 @@ export const App = () => {
                   <Route exact path="/bulb" component={Bulb}></Route>
                   <Route exact path="/raytracer" component={Raytracer}></Route>
                   <Route exact path="/cvtrack" component={Cvtrack}></Route>
+                  <Route exact path="/theremin" component={Theremin}></Route>
                 </Switch>
               </animated.div>
             );

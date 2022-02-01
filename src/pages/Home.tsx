@@ -3,7 +3,8 @@ import * as React from "react";
 import { ContentGrid } from "../components/ContentGrid";
 
 const entries = [
-  { title: "CVTrack", link: "cvtrack", img: "./bulb.png" },
+  { title: "Theremin", link: "theremin", img: "./theremin.png" },
+  { title: "CVTrack", link: "cvtrack", img: "./cvtrack.png" },
   { title: "Fractalize.JS", link: "fractalize", img: "/frac.png" },
   { title: "Audio Reactive GAN", link: "argan", img: "/gan.png" },
   { title: "Chessboard", link: "chess", img: "/chess.png" },
