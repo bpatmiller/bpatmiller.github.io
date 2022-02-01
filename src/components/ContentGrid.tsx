@@ -68,7 +68,7 @@ const ContentGridItem = (props: ContentGridItemProps) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <LinkOverlay href={"/#".concat(props.link)}>
+        <LinkOverlay href={"/".concat(props.link)}>
           <Image fit="cover" w="100%" src={props.img}></Image>
 
           <Flex w="100%" p={1} justify="center" align="center">
