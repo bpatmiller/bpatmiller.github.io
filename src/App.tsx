@@ -15,6 +15,7 @@ import { Bulb } from "./pages/Bulb";
 
 import theme from "./theme";
 import Background from "./components/Background";
+import { Cvtrack } from "./pages/Cvtrack";
 
 export const App = () => {
   const { location } = useRouter();
@@ -52,6 +53,7 @@ export const App = () => {
                   <Route exact path="/gfm2d" component={Gfm}></Route>
                   <Route exact path="/bulb" component={Bulb}></Route>
                   <Route exact path="/raytracer" component={Raytracer}></Route>
+                  <Route exact path="/cvtrack" component={Cvtrack}></Route>
                 </Switch>
               </animated.div>
             );

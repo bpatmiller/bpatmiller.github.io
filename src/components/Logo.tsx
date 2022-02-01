@@ -23,12 +23,7 @@ const Logo = () => {
   return transitions((style, item) => {
     return (
       <animated.div className="no-select" key={item.key} style={style}>
-        <LinkBox
-          height={[24, 24, 24, 36]}
-          overflow="hidden"
-          borderRadius="50%"
-          border="1px solid"
-        >
+        <LinkBox className="logo-box">
           <LinkOverlay href="/"></LinkOverlay>
           <svg
             height="100%"

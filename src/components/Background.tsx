@@ -13,8 +13,9 @@ const Background = ({ children }: any) => {
 
     backgroundRepeat: "repeat",
     backgroundAttachment: "fixed",
-    overflow: "scroll",
+    // overflow: "scroll",
     backgroundSize: "auto",
+    height: "100vh",
   };
 
   return (

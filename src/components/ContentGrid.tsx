@@ -3,6 +3,7 @@ import { useSpring, animated } from "react-spring";
 import React, { useState } from "react";
 
 const AnimatedBox = animated(Box);
+const AnimatedImage = animated(Image);
 
 interface ContentGridProps {
   contents: ContentGridItemProps[];
@@ -19,18 +20,18 @@ const ContentGrid = (props: ContentGridProps) => {
     <ContentGridItem title={x.title} link={x.link} img={x.img} />
   ));
   return (
-    <Flex w="100%" h="100%">
-      <Flex
-        margin="auto"
-        wrap="wrap"
-        justify="space-around"
-        align="center"
-        maxWidth="1400px"
-        p={4}
-        gridRowGap={[12, 12, 12, 8]}
-      >
-        {children}
-      </Flex>
+    <Flex
+      direction="column"
+      flexWrap="nowrap"
+      maxWidth="1200px"
+      alignItems="stretch"
+      alignContent="flex-start"
+      h="100%"
+      w="100%"
+      flexGrow={1}
+      gridGap={2}
+    >
+      {children}
     </Flex>
   );
 };
@@ -39,46 +40,50 @@ const ContentGridItem = (props: ContentGridItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const imgProps = useSpring({
     transform: isHovered ? "translate(-10px,-10px)" : "translate(0px,0px)",
-    filter: isHovered ? "saturate(150%)" : "saturate(50%)",
+    opacity: isHovered ? "100%" : "0%",
+  });
+  const hoverProps = useSpring({
+    transform: isHovered ? "translate(-10px,-10px)" : "translate(0px,0px)",
   });
 
-  const desktopBoxWidth = "calc(100% * (1/3) - 64px - 1px)";
-  const tabletBoxWidth = "calc(100% * (1/2) - 64px - 1px)";
-  const mobileBoxWidth = "calc(100% * (1) - 64px - 1px)";
-
   return (
-    <AnimatedBox
-      className="shadowed"
-      style={imgProps}
-      overflow="hidden"
-      borderRadius="lg"
-      w={[
-        mobileBoxWidth,
-        mobileBoxWidth,
-        tabletBoxWidth,
-        desktopBoxWidth,
-        desktopBoxWidth,
-      ]}
-    >
-      <LinkBox
-        className="caption-container"
-        h="100%"
-        w="100%"
-        rounded="md"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <LinkOverlay href={"/".concat(props.link)}>
-          <Image fit="cover" w="100%" src={props.img}></Image>
+    <>
+      <AnimatedImage
+        className={isHovered ? "image-underlay" : "hidden"}
+        src={props.img}
+        style={imgProps}
+      ></AnimatedImage>
 
-          <Flex w="100%" p={1} justify="center" align="center">
-            <Text noOfLines={1} className="caption" fontSize="2xl">
-              {props.title}
-            </Text>
-          </Flex>
-        </LinkOverlay>
-      </LinkBox>
-    </AnimatedBox>
+      <AnimatedBox
+        width={["calc(100vw - 48px)", "calc(100vw - 48px)", "350px"]}
+        className="shadowed"
+        style={hoverProps}
+        overflow="hidden"
+        borderRadius="lg"
+        m="auto"
+        p={0}
+      >
+        <LinkBox
+          className="caption-container"
+          rounded="md"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <LinkOverlay href={"/".concat(props.link)}>
+            <Flex flexGrow={1} w="100%" p={1}>
+              <Text
+                // width={["calc(100vw - 4px)"]}
+                fontStyle={"italic"}
+                className="caption"
+                fontSize="4xl"
+              >
+                {props.title}
+              </Text>
+            </Flex>
+          </LinkOverlay>
+        </LinkBox>
+      </AnimatedBox>
+    </>
   );
 };
 
