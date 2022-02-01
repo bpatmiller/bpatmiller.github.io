@@ -10,7 +10,7 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = (props) => {
   return (
-    <Flex className="layout">
+    <Flex id="layout" className="layout">
       <Flex className="navbar">
         <Flex
           flexDirection="row"
