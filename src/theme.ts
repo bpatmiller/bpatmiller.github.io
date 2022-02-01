@@ -149,7 +149,7 @@ const theme = extendTheme({
         height: "100%",
         flexDirection: "column",
         p: [2, 2, 8],
-        overflow: "hidden",
+        // overflow: "hidden",
       },
       ".logo-box": {
         height: [24, 24, 32],
