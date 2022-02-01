@@ -69,7 +69,7 @@ const ContentGridItem = (props: ContentGridItemProps) => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <LinkOverlay href={"/".concat(props.link)}>
+          <LinkOverlay href={"/#".concat(props.link)}>
             <Flex flexGrow={1} w="100%" p={1}>
               <Text
                 // width={["calc(100vw - 4px)"]}
