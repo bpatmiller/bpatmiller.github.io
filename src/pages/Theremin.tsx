@@ -4,7 +4,7 @@ import { Writeup, WriteupProps } from "../components/Writeup";
 const markdown = `
 ## About
 
-A virtual theremin powered by the MediaPipe hand detector.
+A virtual theremin powered by the MediaPipe hand detector. The left hand controls a sawtooth synth, the right hand controls and ambient granular synth. The hand detection models work best with well-defined lighting and contrast between the hands and background.
 
 ---
 `;
