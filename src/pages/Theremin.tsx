@@ -15,7 +15,7 @@ const writeup_props: WriteupProps = {
   short: "Make music with your hands and a webcam",
   date: "2022",
   tags: ["ML", "Audio"],
-  contentLink: "https://bpatmiller.github.io/theremin",
+  contentLink: "https://theremin.brendanmiller.io",
   codeLink: "https://github.com/bpatmiller/theremin",
 };
 
