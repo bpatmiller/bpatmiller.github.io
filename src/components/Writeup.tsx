@@ -9,8 +9,8 @@ interface WriteupProps {
   short: string;
   date: string;
   tags: string[];
-  contentLink: string;
-  codeLink: string;
+  contentLink?: string;
+  codeLink?: string;
 }
 
 const HBar = () => {
@@ -43,7 +43,7 @@ const Writeup = (props: WriteupProps) => {
         </Box>
         <Box>
           {props.tags.map((x: string) => (
-            <Badge colorScheme={genColor(x)} m={1}>
+            <Badge key={x} colorScheme={genColor(x)} m={1}>
               {x}
             </Badge>
           ))}
@@ -58,16 +58,15 @@ const Writeup = (props: WriteupProps) => {
       <Flex justify="center" gridGap={4}>
         {props.contentLink && (
           <ContentLink
-            colorScheme="orange"
-            variant="outline"
+            buttonProps={{ colorScheme: "orange", variant: "outline"}}
             link={props.contentLink}
           />
         )}
         {props.codeLink && (
           <CodeLink
-            colorScheme="purple"
-            variant="outline"
+            buttonProps={{ colorScheme: "purple" , variant: "outline" }}
             link={props.codeLink}
+
           />
         )}
       </Flex>

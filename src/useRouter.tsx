@@ -1,8 +1,12 @@
-import { useContext } from "react";
-import { __RouterContext } from "react-router";
+import { useHistory, useLocation, useParams, useRouteMatch } from "react-router-dom";
 
 const useRouter = () => {
-  return useContext(__RouterContext);
+  const history = useHistory();
+  const location = useLocation();
+  const params = useParams();
+  const match = useRouteMatch();
+
+  return { history, location, params, match };
 };
 
 export default useRouter;
