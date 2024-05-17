@@ -9,8 +9,8 @@ interface WriteupProps {
   short: string;
   date: string;
   tags: string[];
-  contentLink: string;
-  codeLink: string;
+  contentLink?: string;
+  codeLink?: string;
 }
 
 const HBar = () => {
@@ -29,14 +29,21 @@ const genColor = (tagName: string) => {
 
 const Writeup = (props: WriteupProps) => {
   return (
-    <Flex margin="auto" maxWidth={800} p={8} direction="column" align="basline">
+    <Flex
+      margin={0}
+      mb={16}
+      maxWidth={800}
+      p={0}
+      direction="column"
+      align="basline"
+    >
       <Flex justify="space-between" align="baseline" gridColumnGap={8}>
         <Box>
           <Heading>{props.title}</Heading>
         </Box>
         <Box>
           {props.tags.map((x: string) => (
-            <Badge colorScheme={genColor(x)} m={1}>
+            <Badge key={x} colorScheme={genColor(x)} m={1}>
               {x}
             </Badge>
           ))}
@@ -51,16 +58,15 @@ const Writeup = (props: WriteupProps) => {
       <Flex justify="center" gridGap={4}>
         {props.contentLink && (
           <ContentLink
-            colorScheme="orange"
-            variant="outline"
+            buttonProps={{ colorScheme: "orange", variant: "outline"}}
             link={props.contentLink}
           />
         )}
         {props.codeLink && (
           <CodeLink
-            colorScheme="purple"
-            variant="outline"
+            buttonProps={{ colorScheme: "purple" , variant: "outline" }}
             link={props.codeLink}
+
           />
         )}
       </Flex>
@@ -99,6 +105,13 @@ const Writeup = (props: WriteupProps) => {
                 padding: "1",
               },
             },
+            li: {
+              component: Text,
+              props: {
+                ml: 4,
+                as: "li",
+              },
+            },
             Image: {
               component: Image,
             },
@@ -108,7 +121,7 @@ const Writeup = (props: WriteupProps) => {
                 margin: "auto",
                 justify: "center",
                 align: "center",
-                padding: 4,
+                padding: 2,
               },
             },
           },

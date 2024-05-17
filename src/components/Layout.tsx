@@ -1,4 +1,4 @@
-import { Box, Flex, LinkBox, LinkOverlay } from "@chakra-ui/react";
+import { Box, Flex, LinkBox, LinkOverlay, Spacer } from "@chakra-ui/react";
 import React from "react";
 import { IoLogoGithub } from "react-icons/io";
 import ColorModeButton from "./ColorModeButton";
@@ -10,46 +10,29 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = (props) => {
   return (
-    <Flex
-      width="100%"
-      height="100vh"
-      flexDirection={["column", "column", "column", "row", "row"]}
-      p={4}
-    >
-      <Flex
-        flexDirection="row"
-        justify="center"
-        align="flex-start"
-        height={[32, 32, 32, "100%"]}
-        w={["100%", "100%", "100%", 48]}
-        flexShrink={0}
-        className="sidebar"
-        paddingTop={[0, 0, 0, 4]}
-        paddingBottom={4}
-      >
+    <Flex id="layout" className="layout">
+      <Flex className="navbar">
         <Flex
-          flexDirection={["row", "row", "row", "column", "column"]}
+          flexDirection="row"
           align="center"
+          justifyContent={"space-around"}
+          w="100%"
         >
           <Box p={4} overflow="hidden">
             <Logo />
           </Box>
-          <LinkBox p={4}>
+          <Spacer></Spacer>
+          <LinkBox p={6}>
             <LinkOverlay href="https://github.com/bpatmiller"></LinkOverlay>
             <IoLogoGithub size="2em" />
           </LinkBox>
-          <Box p={4}>
+          <Box p={6}>
             <ColorModeButton />
           </Box>
         </Flex>
       </Flex>
 
-      <Flex
-        p={0}
-        height="100%"
-        overflow="hide"
-        justify={["center", "center", "center", "flex-start", "flex-start"]}
-      >
+      <Flex p={2} w="100%" maxW={1400} alignItems={"stretch"}>
         {props.children}
       </Flex>
     </Flex>

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import useRouter from "./useRouter";
 import { useTransition, animated } from "react-spring";
 
@@ -15,6 +15,8 @@ import { Bulb } from "./pages/Bulb";
 
 import theme from "./theme";
 import Background from "./components/Background";
+import { Cvtrack } from "./pages/Cvtrack";
+import { Theremin } from "./pages/Theremin";
 
 export const App = () => {
   const { location } = useRouter();
@@ -40,19 +42,20 @@ export const App = () => {
           {transitions((style, item) => {
             return (
               <animated.div key={item.key} style={style}>
-                <Switch>
-                  <Route exact path="/" component={Home}></Route>
+                <Routes>
+                  <Route path="/" element={Home()}></Route>
                   <Route
-                    exact
                     path="/fractalize"
-                    component={Fractalize}
+                    element={Fractalize()}
                   ></Route>
-                  <Route exact path="/argan" component={Argan}></Route>
-                  <Route exact path="/chess" component={Chess}></Route>
-                  <Route exact path="/gfm2d" component={Gfm}></Route>
-                  <Route exact path="/bulb" component={Bulb}></Route>
-                  <Route exact path="/raytracer" component={Raytracer}></Route>
-                </Switch>
+                  <Route path="/argan" element={Argan()}></Route>
+                  <Route  path="/chess" element={Chess()}></Route>
+                  <Route  path="/gfm2d" element={Gfm()}></Route>
+                  <Route  path="/bulb" element={Bulb()}></Route>
+                  <Route  path="/raytracer" element={Raytracer()}></Route>
+                  <Route  path="/cvtrack" element={Cvtrack()}></Route>
+                  <Route  path="/theremin" element={Theremin()}></Route>
+                </Routes>
               </animated.div>
             );
           })}

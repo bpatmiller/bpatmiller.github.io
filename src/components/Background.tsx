@@ -15,10 +15,11 @@ const Background = ({ children }: any) => {
     backgroundAttachment: "fixed",
     overflow: "scroll",
     backgroundSize: "auto",
+    height: "100vh",
   };
 
   return (
-    <div className="bg-container" style={style}>
+    <div id="bg-container" className="bg-container" style={style}>
       {children}
     </div>
   );

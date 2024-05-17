@@ -89,7 +89,7 @@ const theme = extendTheme({
     },
   },
   styles: {
-    global: (props) => ({
+    global: (props: any) => ({
       body: {
         color: mode("gray.900", "gray.50")(props),
         bg: mode("gray.50", "gray.900")(props),
@@ -104,13 +104,57 @@ const theme = extendTheme({
         color: mode("gray.900", "gray.50")(props),
       },
       ".caption-container": {
-        bg: mode("gray.50", "gray.700")(props),
+        bg: mode("gray.50", "gray.800")(props),
       },
       ".subhead": {
         color: mode("gray.700", "gray.200")(props),
       },
       ".no-select": {
         userSelect: "none",
+      },
+      ".image-underlay": {
+        position: "absolute",
+        top: 16,
+        left: [
+          0,
+          0,
+          "calc(350px + (100vw - 350px - 48px - 256px)*.5)",
+          "calc(350px + (100vw - 350px - 48px - 512px)*.5)",
+        ],
+        width: [0, 0, 256, 512],
+        fit: "contain",
+        zIndex: -10,
+        userSelect: "none",
+        display: ["none", "none", "inline"],
+      },
+      ".hidden": {
+        position: "absolute",
+        top: 0,
+        left: 0,
+        zIndex: -10,
+        userSelect: "none",
+        display: "none",
+      },
+      ".navbar": {
+        flexDirection: "row",
+        justify: "center",
+        align: "center",
+        height: 32,
+        w: "100%",
+        flexShrink: 0,
+        paddingBottom: 0,
+      },
+      ".layout": {
+        width: "100%",
+        height: "100%",
+        flexDirection: "column",
+        p: [2, 2, 8],
+        // overflow: "hidden",
+      },
+      ".logo-box": {
+        height: [24, 24, 32],
+        overflow: "hidden",
+        borderRadius: "50%",
       },
       Button: {
         userSelect: "none",
