@@ -15,7 +15,6 @@ import { Bulb } from "./pages/Bulb";
 
 import theme from "./theme";
 import Background from "./components/Background";
-import { Cvtrack } from "./pages/Cvtrack";
 import { Theremin } from "./pages/Theremin";
 
 export const App = () => {
@@ -53,7 +52,6 @@ export const App = () => {
                   <Route  path="/gfm2d" element={Gfm()}></Route>
                   <Route  path="/bulb" element={Bulb()}></Route>
                   <Route  path="/raytracer" element={Raytracer()}></Route>
-                  <Route  path="/cvtrack" element={Cvtrack()}></Route>
                   <Route  path="/theremin" element={Theremin()}></Route>
                 </Routes>
               </animated.div>
